@@ -1,10 +1,10 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    css = { "prettier" },
-    html = { "prettier" },
-    javascript = { "prettier" },
-    typescript = { "prettier" },
+    css = { "prettierd", "prettier" },
+    html = { "prettierd", "prettier" },
+    javascript = { "prettierd", "prettier" },
+    typescript = { "prettierd", "prettier" },
     python = { "ruff_fix", "ruff_format" },
     go = { "goimports", "gofumpt" },
   },
