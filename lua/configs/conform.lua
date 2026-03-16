@@ -5,6 +5,7 @@ local options = {
     html = { "prettierd", "prettier" },
     javascript = { "prettierd", "prettier" },
     typescript = { "prettierd", "prettier" },
+    sql = { "sql_formatter" },
     python = { "ruff_fix", "ruff_format" },
     go = { "goimports", "gofumpt" },
   },

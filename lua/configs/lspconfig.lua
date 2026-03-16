@@ -6,8 +6,7 @@ local servers = {
   "pyright",
   "ts_ls",
   "rust_analyzer",
-  "gopls"
+  "gopls",
+  "jdtls",
 }
 vim.lsp.enable(servers)
-
--- read :h vim.lsp.config for changing options of lsp servers 
