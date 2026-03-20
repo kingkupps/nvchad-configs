@@ -10,11 +10,22 @@ local options = {
     go = { "goimports", "gofumpt" },
   },
 
-  format_on_save = {
-    -- These options will be passed to conform.format()
-    timeout_ms = 500,
-    lsp_fallback = true,
-  },
+  format_on_save = function(bufnr)
+    local filepath = vim.api.nvim_buf_get_name(bufnr)
+
+    if filepath:match("%.test%.ts$") then
+      return {
+        timeout_ms = 500,
+        lsp_fallback = true,
+        formatters = { "prettierd", "prettier" },
+      }
+    end
+
+    return {
+      timeout_ms = 500,
+      lsp_fallback = true,
+    }
+  end,
 }
 
 return options
