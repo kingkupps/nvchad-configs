@@ -32,4 +32,20 @@ return {
       },
     },
   },
+  {
+    "f-person/git-blame.nvim",
+    keys = {
+      {
+        "<leader>gb",
+        "<cmd>GitBlameToggle<cr>",
+        desc = "toggle git blame",
+      },
+    },
+    opts = {
+      enabled = false,
+    },
+    config = function(_, opts)
+      require("gitblame").setup(opts)
+    end,
+  },
 }
