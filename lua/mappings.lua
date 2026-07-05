@@ -22,3 +22,6 @@ map("v", '"', "<Esc>`>a\"<Esc>`<i\"<Esc>", { desc = "surround selection with \"\
 
 -- Exit all buffers
 map("n", "<leader>qq", ":qa<CR>")
+
+-- Toggle LSP fold under cursor
+map("n", "<leader>mc", "za", { desc = "toggle fold under cursor" })
