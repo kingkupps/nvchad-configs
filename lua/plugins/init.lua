@@ -22,6 +22,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
     opts = {
       ensure_installed = {
         "vim",
@@ -29,6 +30,10 @@ return {
         "vimdoc",
         "html",
         "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
       },
     },
   },
