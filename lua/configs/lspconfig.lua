@@ -10,6 +10,17 @@ local servers = {
   "gopls",
   "jdtls",
 }
+
+-- Pyright auto-detects the bare system `python3`, which lacks the packages
+-- installed in the active pyenv interpreter, so third-party imports show as
+-- unresolved. Pin it to the `python` on PATH (the active pyenv version).
+local python_path = vim.fn.exepath("python")
+if python_path ~= "" then
+  vim.lsp.config("pyright", {
+    settings = { python = { pythonPath = python_path } },
+  })
+end
+
 vim.lsp.enable(servers)
 
 -- Open files with folds expanded
