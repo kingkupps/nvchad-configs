@@ -10,6 +10,7 @@ local options = {
     sql = { "sql_formatter" },
     python = { "ruff_fix", "ruff_format" },
     go = { "goimports", "gofumpt" },
+    rust = { "rustfmt" },
   },
 
   format_on_save = function(bufnr)
