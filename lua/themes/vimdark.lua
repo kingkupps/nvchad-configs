@@ -1,4 +1,4 @@
--- Pure black background, white text, and vim's built-in `syntax on` palette
+-- #191919 background, white text, and vim's built-in `syntax on` palette
 -- for a dark background (see `:h highlight-groups` defaults in vim).
 
 local M = {}
@@ -13,16 +13,17 @@ local preproc = "#ff80ff"
 local special = "#ffa500"
 local white = "#ffffff"
 local black = "#000000"
+local bg = "#191919"
 local ignore = "#666666"
 
 M.base_30 = {
   white = white,
-  darker_black = black,
-  black = black, --  nvim bg
-  black2 = "#0d0d0d",
-  one_bg = "#121212",
-  one_bg2 = "#1a1a1a",
-  one_bg3 = "#242424",
+  darker_black = "#121212",
+  black = bg, --  nvim bg
+  black2 = "#1f1f1f",
+  one_bg = "#232323",
+  one_bg2 = "#2b2b2b",
+  one_bg3 = "#353535",
   grey = "#3a3a3a",
   grey_fg = "#4e4e4e",
   grey_fg2 = "#5a5a5a",
@@ -30,7 +31,7 @@ M.base_30 = {
   red = "#ff5f5f",
   baby_pink = constant,
   pink = preproc,
-  line = "#262626", -- for lines like vertsplit
+  line = "#333333", -- for lines like vertsplit
   green = type_,
   vibrant_green = "#87ff87",
   blue = comment,
@@ -42,16 +43,16 @@ M.base_30 = {
   teal = "#008b8b",
   orange = special,
   cyan = identifier,
-  statusline_bg = "#0d0d0d",
-  lightbg = "#1a1a1a",
+  statusline_bg = "#1f1f1f",
+  lightbg = "#2b2b2b",
   pmenu_bg = statement,
   folder_bg = comment,
 }
 
 M.base_16 = {
-  base00 = black,
-  base01 = "#0d0d0d",
-  base02 = "#303030",
+  base00 = bg,
+  base01 = "#1f1f1f",
+  base02 = "#383838",
   base03 = "#4e4e4e",
   base04 = ignore,
   base05 = white,
@@ -157,6 +158,14 @@ M.polish_hl = {
     ["@markup.link.url"] = { fg = comment, underline = true },
   },
 
+  nvimtree = {
+    NvimTreeNormal = { bg = bg },
+    NvimTreeNormalNC = { bg = bg },
+    NvimTreeEndOfBuffer = { fg = bg },
+    -- Paired with the half-block `vert` fillchar set for the tree window in autocmds.lua.
+    NvimTreeWinSeparator = { fg = ignore, bg = bg },
+  },
+
   defaults = {
     Comment = { fg = comment },
     Search = { fg = black, bg = statement },
@@ -167,7 +176,7 @@ M.polish_hl = {
     Directory = { fg = identifier },
     SpecialKey = { fg = identifier },
     NonText = { fg = "#4e4e4e" },
-    Folded = { fg = identifier, bg = "#1a1a1a" },
+    Folded = { fg = identifier, bg = "#2b2b2b" },
     CursorLineNr = { fg = statement },
     ErrorMsg = { fg = white, bg = "#ff0000" },
     WarningMsg = { fg = "#ff5f5f" },
